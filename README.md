@@ -23,7 +23,7 @@ sudo make install
 ## Cron
 ```  
 crontab -e
-@reboot uvcdynctrl -a 046d:0821 -s 'LED1 Mode' 0 && /usr/local/bin/mjpg_streamer -i "/usr/local/lib/mjpg-streamer/input_uvc.so -n" -o "/usr/local/lib/mjpg-streamer/output_http.so -p 8081 -w /usr/local/share/mjpg-streamer/www" -b
+@reboot /usr/local/bin/mjpg_streamer -i "/usr/local/lib/mjpg-streamer/input_uvc.so -n" -o "/usr/local/lib/mjpg-streamer/output_http.so -p 8081 -w /usr/local/share/mjpg-streamer/www" -b && uvcdynctrl -a 046d:0821 -s 'LED1 Mode' 0
 ```  
 
 # Single Commands
