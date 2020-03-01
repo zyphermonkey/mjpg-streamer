@@ -23,7 +23,7 @@ sudo make install
 ## Cron
 ```  
 crontab -e
-@reboot /usr/local/bin/mjpg_streamer -i "/usr/local/lib/mjpg-streamer/input_uvc.so -n" -o "/usr/local/lib/mjpg-streamer/output_http.so -p 8081 -w /usr/local/share/mjpg-streamer/www" -b && uvcdynctrl -a 046d:0821 -s 'LED1 Mode' 0
+@reboot /usr/local/bin/mjpg_streamer -i "/usr/local/lib/mjpg-streamer/input_uvc.so -n" -o "/usr/local/lib/mjpg-streamer/output_http.so -p 8081 -w /usr/local/share/mjpg-streamer/www" -b && uvcdynctrl -s 'LED1 Mode' 0
 ```  
 
 # Single Commands
@@ -31,8 +31,7 @@ crontab -e
 `uvcdynctrl -l`  
 
 **Disable Camera LED**  
-*use id from list command*  
-`uvcdynctrl -a 046d:0821 -s 'LED1 Mode' 0`  
+`uvcdynctrl -s 'LED1 Mode' 0`  
 
 **Run mjpg-streamer**  
 `mjpg_streamer -i "/usr/local/lib/mjpg-streamer/input_uvc.so -n" -o "/usr/local/lib/mjpg-streamer/output_http.so -p 8081 -w /usr/local/share/mjpg-streamer/www" -b`  
